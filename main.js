@@ -64,29 +64,29 @@ function xTurn() {
 function checkWin() {
   //check row wins
   if ((boxes[1] === boxes[2] && boxes[1] === boxes[3]) || (boxes[4] === boxes[5] && boxes[4] === boxes[6]) || (boxes[7] === boxes[8] && boxes[7] === boxes[9])) {
-    if (boxes[1] === "O") {
-      showWinMessage("O");
+    if (turn) {
+      showWinMessage("X");
     }
     else {
-      showWinMessage("X");
+      showWinMessage("O");
     }
   }
   //check column wins
   else if ((boxes[1] === boxes[4] && boxes[1] === boxes[7]) || (boxes[2] === boxes[5] && boxes[2] === boxes[8]) || (boxes[3] === boxes[6] && boxes[3] === boxes[9])) {
-    if (boxes[1] === "O") {
-      showWinMessage("O");
+    if (turn) {
+      showWinMessage("X");
     }
     else {
-      showWinMessage("X");
+      showWinMessage("O");
     }
   }
   //check diagnol wins
   else if ((boxes[1] === boxes[5] && boxes[1] === boxes[9]) || (boxes[7] === boxes[5] && boxes[7] === boxes[3])) {
-    if (boxes[1] === "O") {
-      showWinMessage("O");
+    if (turn) {
+      showWinMessage("X");
     }
     else {
-      showWinMessage("X");
+      showWinMessage("O");
     }
   }
   else {
