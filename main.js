@@ -112,7 +112,7 @@ function checkWin() {
       showWinMessage("O");
     }
   }
-  //check diagnol wins
+  //check diagonal wins
   else if ((boxes[1] === boxes[5] && boxes[1] === boxes[9]) || (boxes[7] === boxes[5] && boxes[7] === boxes[3])) {
     if (turn) {
       showWinMessage("X");
