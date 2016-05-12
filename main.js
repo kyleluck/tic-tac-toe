@@ -78,6 +78,10 @@ function xTurn() {
     boxes[5] = "X";
     $('button[name=5]').text('X');
   }
+  else if (boxes[4] === "O" && boxes[5] === "O" & boxes[6] !== "X") {
+    boxes[6] = "X";
+    $('button[name=6]').text('X');
+  }
   else {
     var go = true;
     while (go) {
