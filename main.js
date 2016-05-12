@@ -126,7 +126,6 @@ function checkWin() {
     var allDone = true;
     for (var key in boxes) {
       if (boxes[key] !== "X" && boxes[key] !== "O") {
-        console.log('Here and ' + boxes[key]);
         allDone = false;
       }
     }
