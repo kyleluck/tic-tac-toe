@@ -24,7 +24,7 @@ button {
 .btn {
   font-size: 12em;
 }
-.thinkingmessage, .winmessage {
+.thinkingmessage, .winmessage, .playagain {
   display: none;
 }
 @media (max-width:900px) {

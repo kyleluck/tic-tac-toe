@@ -26,6 +26,10 @@ $('.btn').click(function() {
   }
 });
 
+$('.playagainlink').click(function() {
+    location.reload();
+});
+
 function displayThinking() {
   $('.thinkingmessage').show();
 }
@@ -83,4 +87,5 @@ function checkWin() {
 
 function showWinMessage (winner) {
   $('.winmessage').text(winner + " IS THE WINNER!!!").show();
+  $( '.playagain' ).show();
 }
