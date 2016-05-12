@@ -5,11 +5,8 @@ $('.btn').click(function() {
     $(this).text('O');
     turn = false;
     displayThinking();
-    setTimeout(hideThinking, 5000);
-  }
-  else if (currentValue === '' && turn === false) {
-    $(this).text('X');
-    turn = true;
+    setTimeout(hideThinking, 2500);
+    setTimeout(xTurn, 3000);
   }
 });
 
@@ -18,4 +15,14 @@ function displayThinking () {
 }
 function hideThinking () {
   $('.alert').hide();
+}
+function xTurn () {
+  //get all buttons and look for blanks
+  $( ":button" ).each(function(i, obj) {
+    if ($(this).text() === '') {
+      $(this).text('X');
+      return false;
+    }
+  });
+  turn = true;
 }
