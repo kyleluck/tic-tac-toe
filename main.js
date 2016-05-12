@@ -39,24 +39,54 @@ function hideThinking() {
 }
 
 function xTurn() {
-  //get all buttons and look for blanks
-  // $( ":button" ).each(function(i, obj) {
-  //   if ($(this).text() === '') {
-  //     var thisName = $(this).attr("name");
-  //     boxes[thisName] = "X";
-  //     $(this).text('X');
-  //     return false;
-  //   }
-  // });
-  var go = true;
-  while (go) {
-    var random = Math.floor(Math.random() * 9) + 1;
-    if (boxes[random] !== "O" && boxes[random] !== "X") {
-      boxes[random] = 'X';
-      $( 'button[name="' + random + '"]' ).text('X');
-      go = false;
+  if (boxes[1] === "O" && boxes[2] == "O" && boxes[3] !== "X") {
+    boxes[3] = "X";
+    $( 'button[name=3]' ).text('X');
+  }
+  else if (boxes[1] === "O" && boxes[4] === "O" && boxes[7] !== "X") {
+    boxes[7] = "X";
+    $( 'button[name=7]' ).text('X');
+  }
+  else if (boxes[2] === "O" && boxes[3] === "O" && boxes[1] !== "X") {
+    boxes[1] = "X";
+    $('button[name=1]').text('X');
+  }
+  else if (boxes[2] === "O" && boxes[5] === "O" & boxes[8] !== "X") {
+    boxes[8] = "X";
+    $('button[name=8]').text('X');
+  }
+  else if (boxes[5] === "O" && boxes[8] === "O" & boxes[2] !== "X") {
+    boxes[2] = "X";
+    $('button[name=2]').text('X');
+  }
+  else if (boxes[3] === "O" && boxes[6] === "O" & boxes[9] !== "X") {
+    boxes[9] = "X";
+    $('button[name=9]').text('X');
+  }
+  else if (boxes[6] === "O" && boxes[9] === "O" & boxes[3] !== "X") {
+    boxes[3] = "X";
+    $('button[name=3]').text('X');
+  }
+  else if (boxes[1] === "O" && boxes[5] === "O" & boxes[9] !== "X") {
+    boxes[9] = "X";
+    $('button[name=9]').text('X');
+  }
+  else if (boxes[7] === "O" && boxes[3] === "O" & boxes[5] !== "X") {
+    boxes[5] = "X";
+    $('button[name=5]').text('X');
+  }
+  else {
+    var go = true;
+    while (go) {
+      var random = Math.floor(Math.random() * 9) + 1;
+      if (boxes[random] !== "O" && boxes[random] !== "X") {
+        boxes[random] = 'X';
+        $( 'button[name="' + random + '"]' ).text('X');
+        go = false;
+      }
     }
   }
+
   turn = true;
   checkWin()
 }
