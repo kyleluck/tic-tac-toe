@@ -125,6 +125,7 @@ function checkWin() {
 }
 
 function showWinMessage (winner) {
+  $('.btn').addClass("easteregg");
   $('.winmessage').text(winner + " IS THE WINNER!!!").show();
   $( '.playagain' ).show();
 }
