@@ -40,14 +40,23 @@ function hideThinking() {
 
 function xTurn() {
   //get all buttons and look for blanks
-  $( ":button" ).each(function(i, obj) {
-    if ($(this).text() === '') {
-      var thisName = $(this).attr("name");
-      boxes[thisName] = "X";
-      $(this).text('X');
-      return false;
+  // $( ":button" ).each(function(i, obj) {
+  //   if ($(this).text() === '') {
+  //     var thisName = $(this).attr("name");
+  //     boxes[thisName] = "X";
+  //     $(this).text('X');
+  //     return false;
+  //   }
+  // });
+  var go = true;
+  while (go) {
+    var random = Math.floor(Math.random() * 9) + 1;
+    if (boxes[random] !== "O" && boxes[random] !== "X") {
+      boxes[random] = 'X';
+      $( 'button[name="' + random + '"]' ).text('X');
+      go = false;
     }
-  });
+  }
   turn = true;
   checkWin()
 }
