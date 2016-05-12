@@ -9,14 +9,21 @@ button {
   border-radius: 0;
   padding: 0;
 }
+.btn-default {
+  background: #337ab7;
+  color: white
+}
 .btn-default:hover {
   border: 2px solid orange;
+  background: #80A1D4;
   /*transform: rotate(360deg);
   transition: .3s;*/
 }
 .btn-default:focus, .btn-default:hover {
   background-position: 0;
   outline: none;
+  background: #337ab7;
+  color: white;
 }
 .col-xs-4 {
   padding: 0;
