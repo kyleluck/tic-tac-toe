@@ -11,9 +11,12 @@ button {
 }
 .btn-default:hover {
   border: 2px solid orange;
+  transform: rotate(360deg);
+  transition: .3s;
 }
 .btn-default:focus, .btn-default:hover {
   background-position: 0;
+  outline: none;
 }
 .col-xs-4 {
   padding: 0;
