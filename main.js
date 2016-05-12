@@ -20,8 +20,11 @@ $('.btn').click(function() {
     turn = false;
     if (checkWin()) {
       displayThinking();
-      setTimeout(hideThinking, 2500);
-      setTimeout(xTurn, 3000);
+      setTimeout(hideThinking, 1500);
+      setTimeout(xTurn, 1700);
+    }
+    else {
+      showPlayAgain();
     }
   }
 });
@@ -86,7 +89,6 @@ function xTurn() {
       }
     }
   }
-
   turn = true;
   checkWin()
 }
@@ -120,12 +122,29 @@ function checkWin() {
     }
   }
   else {
-    return true;
+    //check to see if all boxes filled, but no winner
+    var allDone = true;
+    for (var key in boxes) {
+      if (boxes[key] !== "X" && boxes[key] !== "O") {
+        console.log('Here and ' + boxes[key]);
+        allDone = false;
+      }
+    }
+    if (allDone) {
+      return false;
+    }
+    else {
+      return true;
+    }
   }
 }
 
-function showWinMessage (winner) {
+function showWinMessage(winner) {
   $('.btn').addClass("easteregg");
   $('.winmessage').text(winner + " IS THE WINNER!!!").show();
+  showPlayAgain();
+}
+
+function showPlayAgain() {
   $( '.playagain' ).show();
 }
