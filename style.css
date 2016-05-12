@@ -24,7 +24,7 @@ button {
 .btn {
   font-size: 12em;
 }
-.alert {
+.thinkingmessage, .winmessage {
   display: none;
 }
 @media (max-width:900px) {
