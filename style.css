@@ -24,6 +24,9 @@ button {
 .btn {
   font-size: 12em;
 }
+.alert {
+  display: none;
+}
 @media (max-width:900px) {
   button {
     height: 200px;
