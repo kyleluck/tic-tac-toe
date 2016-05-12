@@ -1,0 +1,33 @@
+body {
+  margin-top: 20px;
+}
+button {
+  width: 100%;
+  height: 250px;
+}
+.btn {
+  border-radius: 0;
+  padding: 0;
+}
+.btn-default:hover {
+  border: 2px solid orange;
+}
+.btn-default:focus, .btn-default:hover {
+  background-position: 0;
+}
+.col-xs-4 {
+  padding: 0;
+}
+.btn {
+  font-size: 12em;
+}
+@media (max-width:900px) {
+  button {
+    height: 200px;
+  }
+}
+@media (max-width:600px) {
+  button {
+    height: 100px;
+  }
+}
