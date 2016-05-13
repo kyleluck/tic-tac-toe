@@ -168,13 +168,12 @@ function addWin(player) {
 }
 
 function clearBoard() {
-  $('.btn').each(function() {
-    $(this).text('');
-  });
+  $('.btn').text('');
   turn = true;
   for (var key in boxes) {
     boxes[key] = "1" + key;
   }
+  $('.btn').removeClass("easteregg");
   $('.playagain').hide();
   $('.winmessage').hide();
   $('.drawmessage').hide();
