@@ -31,7 +31,7 @@ button {
 .btn {
   font-size: 12em;
 }
-.thinkingmessage, .winmessage, .playagain {
+.thinkingmessage, .winmessage, .playagain, .drawmessage {
   display: none;
 }
 .easteregg {

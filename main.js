@@ -134,6 +134,7 @@ function checkWin() {
       }
     }
     if (allDone) {
+      showDrawMessage();
       return false;
     }
     else {
@@ -150,4 +151,8 @@ function showWinMessage(winner) {
 
 function showPlayAgain() {
   $( '.playagain' ).show();
+}
+
+function showDrawMessage() {
+  $( '.drawmessage' ).show();
 }
