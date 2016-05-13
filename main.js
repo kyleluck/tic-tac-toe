@@ -1,4 +1,8 @@
 var turn = true;
+var timesWon = {
+  "X": 0,
+  "O": 0
+};
 var boxes = {
   1: "1",
   2: "2",
@@ -30,7 +34,8 @@ $('.btn').click(function() {
 });
 
 $('.playagainlink').click(function() {
-    location.reload();
+    //location.reload();
+    clearBoard();
 });
 
 function displayThinking() {
@@ -144,8 +149,9 @@ function checkWin() {
 }
 
 function showWinMessage(winner) {
+  addWin(winner);
   $('.btn').addClass("easteregg");
-  $('.winmessage').text(winner + " IS THE WINNER!!!").show();
+  $('.winmessage').text(winner + " IS THE WINNER! " + winner + " has won " + timesWon[winner] + " times.").show();
   showPlayAgain();
 }
 
@@ -155,4 +161,21 @@ function showPlayAgain() {
 
 function showDrawMessage() {
   $( '.drawmessage' ).show();
+}
+
+function addWin(player) {
+  timesWon[player]++;
+}
+
+function clearBoard() {
+  $('.btn').each(function() {
+    $(this).text('');
+  });
+  turn = true;
+  for (var key in boxes) {
+    boxes[key] = "1" + key;
+  }
+  $('.playagain').hide();
+  $('.winmessage').hide();
+  $('.drawmessage').hide();
 }
